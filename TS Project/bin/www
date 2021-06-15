@@ -1,0 +1,16 @@
+#!/usr/bin/env node
+
+//included in the json file for the project. Referneced as the start file to go to when npm is ran with npm start
+//sets variable for app.ts -> searches for for the app from the path given
+//starts app hosted on the given port at localhost
+
+const appStart = require('../main/app.ts'); 
+
+const server = appStart.listen(3001, () => {
+
+    let host = server.address().address
+    let port = server.address().port
+
+    console.log(`Login system successfully hosted at ${host} on port ${port}!`)
+}); 
+
